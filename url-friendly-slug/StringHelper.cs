@@ -1,7 +1,7 @@
 ﻿/*
-    Copyright (c) Johan Boström. All rights reserved.
-    Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
-*/
+ *  Copyright (c) Johan Boström. All rights reserved.
+ *  Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
+ */
 
 using System.Globalization;
 using System.Text;
@@ -38,9 +38,8 @@ namespace UrlFriendlySlug
 
                 switch (CharUnicodeInfo.GetUnicodeCategory(c))
                 {
-                    // Check if the character is a letter or a digit
-                    // if the character is a international character
-                    // remap it to an ascii valid character
+                    // Check if the character is a letter or a digit if the character is a
+                    // international character remap it to an ascii valid character
                     case UnicodeCategory.LowercaseLetter:
                     case UnicodeCategory.UppercaseLetter:
                     case UnicodeCategory.DecimalDigitNumber:
@@ -52,9 +51,8 @@ namespace UrlFriendlySlug
                         prevdash = false;
                         trueLength = stringBuilder.Length;
                         continue;
-                    
-                    // Check if the character is to be replaced by a -
-                    // but only if the last character wasn't
+
+                    // Check if the character is to be replaced by a - but only if the last character wasn't
                     case UnicodeCategory.SpaceSeparator:
                     case UnicodeCategory.ConnectorPunctuation:
                     case UnicodeCategory.DashPunctuation:
@@ -68,7 +66,7 @@ namespace UrlFriendlySlug
                         }
                         continue;
                 }
-                
+
                 // If we are at max length, stop parsing
                 if (maxLength > 0 && trueLength >= maxLength)
                     break;
