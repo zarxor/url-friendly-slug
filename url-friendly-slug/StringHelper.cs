@@ -21,16 +21,18 @@ namespace UrlFriendlySlug
             // Return empty value if text is null
             if (text == null) return "";
 
-            // Normalize the text
             var normalizedString = text
+                // Make lowercase
                 .ToLowerInvariant()
+                // Normalize the text
                 .Normalize(NormalizationForm.FormD);
 
             var stringBuilder = new StringBuilder();
             var stringLength = normalizedString.Length;
-            bool prevdash = false;
-            char c;
+            var prevdash = false;
             var trueLength = 0;
+
+            char c;
 
             for (int i = 0; i < stringLength; i++)
             {
@@ -72,6 +74,7 @@ namespace UrlFriendlySlug
                     break;
             }
 
+            // Trim excess -
             var result = stringBuilder.ToString().Trim('-');
 
             // Remove any excess character to meet maxlength criteria
