@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "url-friendly-slug", "url-friendly-slug\url-friendly-slug.csproj", "{C620F29C-5E8E-4876-9B9D-98521F938253}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UrlFriendlySlug", "url-friendly-slug\UrlFriendlySlug.csproj", "{C620F29C-5E8E-4876-9B9D-98521F938253}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
