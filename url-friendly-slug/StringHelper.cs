@@ -13,9 +13,9 @@ namespace UrlFriendlySlug
         /// <summary>
         /// Creates a URL And SEO friendly slug
         /// </summary>
-        /// <param name="text"></param>
-        /// <param name="maxLength"></param>
-        /// <returns></returns>
+        /// <param name="text">Text to slugify</param>
+        /// <param name="maxLength">Max length of slug</param>
+        /// <returns>URL and SEO friendly string</returns>
         public static string URLFriendly(string text, int maxLength = 0)
         {
             // Return empty value if text is null
@@ -52,9 +52,9 @@ namespace UrlFriendlySlug
 
                         prevdash = false;
                         trueLength = stringBuilder.Length;
-                        continue;
+                        break;
 
-                    // Check if the character is to be replaced by a - but only if the last character wasn't
+                    // Check if the character is to be replaced by a hyphen but only if the last character wasn't
                     case UnicodeCategory.SpaceSeparator:
                     case UnicodeCategory.ConnectorPunctuation:
                     case UnicodeCategory.DashPunctuation:
@@ -66,7 +66,7 @@ namespace UrlFriendlySlug
                             prevdash = true;
                             trueLength = stringBuilder.Length;
                         }
-                        continue;
+                        break;
                 }
 
                 // If we are at max length, stop parsing
@@ -74,7 +74,7 @@ namespace UrlFriendlySlug
                     break;
             }
 
-            // Trim excess -
+            // Trim excess hyphens
             var result = stringBuilder.ToString().Trim('-');
 
             // Remove any excess character to meet maxlength criteria

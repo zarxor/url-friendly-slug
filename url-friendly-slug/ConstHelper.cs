@@ -1,17 +1,13 @@
-﻿/*
- *  Copyright (c) Johan Boström. All rights reserved.
- *  Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
- */
-
-namespace UrlFriendlySlug
+﻿namespace UrlFriendlySlug
 {
     public static class ConstHelper
     {
         /// <summary>
         /// Remaps international characters to ascii compatible ones
+        /// based of: https://meta.stackexchange.com/questions/7435/non-us-ascii-characters-dropped-from-full-profile-url/7696#7696
         /// </summary>
-        /// <param name="c"></param>
-        /// <returns></returns>
+        /// <param name="c">Charcter to remap</param>
+        /// <returns>Remapped character</returns>
         public static string RemapInternationalCharToAscii(char c)
         {
             string s = c.ToString().ToLowerInvariant();
